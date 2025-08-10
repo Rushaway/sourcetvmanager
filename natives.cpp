@@ -152,7 +152,8 @@ static cell_t Native_GetServerPort(IPluginContext *pContext, const cell_t *param
 	if (hltvserver == nullptr)
 		return 0;
 
-#if SOURCE_ENGINE == SE_TF2 || SOURCE_ENGINE == SE_HL2DM
+#if SOURCE_ENGINE==SE_ORANGEBOX || SOURCE_ENGINE==SE_LEFT4DEAD || SOURCE_ENGINE==SE_LEFT4DEAD2 || SOURCE_ENGINE==SE_TF2 || SOURCE_ENGINE==SE_DODS || SOURCE_ENGINE==SE_HL2DM || SOURCE_ENGINE==SE_NUCLEARDAWN || \
+    SOURCE_ENGINE==SE_ALIENSWARM || SOURCE_ENGINE==SE_BLOODYGOODTIME || SOURCE_ENGINE==SE_CSGO || SOURCE_ENGINE==SE_CSS || SOURCE_ENGINE==SE_INSURGENCY || SOURCE_ENGINE==SE_SDK2013 || SOURCE_ENGINE== SE_BMS
 	return hltvserver->GetBaseServer()->GetLocalUDPPort();
 #else
 	return hltvserver->GetBaseServer()->GetUDPPort();
